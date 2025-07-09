@@ -14,7 +14,7 @@ function LoginPage() {
     setError('');
     setLoading(true);
     try {
-      const res = await fetch(`${(window as any).config.apiUrl}/api/auth/signin`, {
+      const res = await fetch(`${(window as any).configs.apiUrl}/api/auth/signin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),

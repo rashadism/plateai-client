@@ -15,7 +15,7 @@ function RegisterPage() {
     setError('');
     setLoading(true);
     try {
-      const res = await fetch(`${(window as any).config.apiUrl}/api/auth/signup`, {
+      const res = await fetch(`${(window as any).configs.apiUrl}/api/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, name, password }),

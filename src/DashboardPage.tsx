@@ -70,7 +70,7 @@ function DashboardPage() {
     setHistoryError('');
     try {
       const jwt = localStorage.getItem('jwt');
-      const res = await fetch(`${(window as any).config.apiUrl}/api/meals/`, {
+      const res = await fetch(`${(window as any).configs.apiUrl}/api/meals/`, {
         headers: {
           'Authorization': `Bearer ${jwt}`,
         },
@@ -93,7 +93,7 @@ function DashboardPage() {
     setMealDetail(null);
     try {
       const jwt = localStorage.getItem('jwt');
-      const res = await fetch(`${(window as any).config.apiUrl}/api/meals/${mealId}`, {
+      const res = await fetch(`${(window as any).configs.apiUrl}/api/meals/${mealId}`, {
         headers: {
           'Authorization': `Bearer ${jwt}`,
         },
@@ -117,7 +117,7 @@ function DashboardPage() {
     setSaveSuccess(false);
     try {
       const jwt = localStorage.getItem('jwt');
-      const res = await fetch(`${(window as any).config.apiUrl}/api/meals/analyze`, {
+      const res = await fetch(`${(window as any).configs.apiUrl}/api/meals/analyze`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -151,7 +151,7 @@ function DashboardPage() {
     try {
       const jwt = localStorage.getItem('jwt');
       const meal_date = new Date().toISOString();
-      const res = await fetch(`${(window as any).config.apiUrl}/api/meals/`, {
+      const res = await fetch(`${(window as any).configs.apiUrl}/api/meals/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -196,7 +196,7 @@ function DashboardPage() {
     setEditSuccess(false);
     try {
       const jwt = localStorage.getItem('jwt');
-      const res = await fetch(`${(window as any).config.apiUrl}/api/meals/${mealDetail.mealId}`, {
+      const res = await fetch(`${(window as any).configs.apiUrl}/api/meals/${mealDetail.mealId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -227,7 +227,7 @@ function DashboardPage() {
     setDeleteError('');
     try {
       const jwt = localStorage.getItem('jwt');
-      const res = await fetch(`${(window as any).config.apiUrl}/api/meals/${mealDetail.mealId}`, {
+      const res = await fetch(`${(window as any).configs.apiUrl}/api/meals/${mealDetail.mealId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${jwt}`,
